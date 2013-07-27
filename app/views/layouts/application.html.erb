@@ -7,8 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
-<div id = "content">
-</div>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+            <a href="#" class="brand">
+              Mab
+            </a>
+            <ul class="nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Campaigns</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+            <ul class="nav pull-right">
+                <a class="yellow btn" href="#login">
+                    Login
+                </a>
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <section id="campaigns" class="grid">
+<!--             <div class="row">
+                <div class="span12 campaign">
+                    <div class="status">.</div> 
+                    <div class="name">.</div> 
+                    <div class="edit-btn">.</div> 
+                    <div class="stats-btn">.</div> 
+                </div>
+            </div> -->
+
+            <table id="campaigns" class="table">
+              <tbody>
+                <tr class="campaign">
+                  <td class="status"><i class="icon icon-check"></i></td>
+                  <td class="name">Email Button</td>
+                  <td class="edit-btn"><i class="icon icon-edit"></i></td>
+                  <td class="stats-btn"><i class="icon icon-signal"></i></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+    
+    
+    <!-- <div id = "content"><%= yield %></div> -->
 </body>
 </html>

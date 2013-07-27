@@ -12,3 +12,31 @@
  *= require o2
  *= require_tree .
  */
+
+
+/* ------------------------------------------
+   Campaigns
+   ------------------------------------------*/
+tr.campaign {
+
+	border: 1px solid black;
+	display: block;
+
+	.status {
+		background-color: #FEE;
+	}
+
+	.name {
+		
+	}
+	.edit-btn {
+		background-color: #EFE;
+	}
+	.stats-btn {
+		background-color: #EEF;
+	}
+
+    // > * {
+    // 	display: inline-block;
+    // }
+}
