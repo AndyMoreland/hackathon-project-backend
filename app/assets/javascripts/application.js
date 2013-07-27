@@ -15,4 +15,5 @@
 //= require underscore.js
 //= require backbone.js
 //= require statics/views/index.js
+//= require o2
 //= require statics/init.js
