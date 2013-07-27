@@ -19,6 +19,8 @@ Workspace = Backbone.Router.extend({
 
 });
 
-window.mainRouter = new Workspace();
+$(document).ready(function () { 
+  window.mainRouter = new Workspace();
 
-Backbone.history.start();
+  Backbone.history.start();
+});
