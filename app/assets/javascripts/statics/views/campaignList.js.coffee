@@ -1,5 +1,5 @@
 class CampaignListView extends Backbone.View
-  template: HandlebarsTemplates['foo']
+  template: HandlebarsTemplates['campaignList']
 
   initialize: (options) ->
     @el = options.el
