@@ -16,8 +16,6 @@
 //= require underscore.js
 //= require backbone.js
 //= require handlebars
-//= require statics/main.js
 //= require statics/views/campaign.js
 //= require statics/views/index.js
 //= require statics/init.js
-//= require_tree ./templates
