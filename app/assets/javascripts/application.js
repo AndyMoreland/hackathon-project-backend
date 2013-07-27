@@ -19,6 +19,7 @@
 //= require_tree ./templates/
 //= require statics/models/campaign.js
 //= require statics/collections/campaign.js
+//= require statics/views/campaignList.js
 //= require statics/views/campaign.js
 //= require statics/views/index.js
 //= require statics/init.js
