@@ -14,6 +14,7 @@
 //= require d3.v3.js
 //= require underscore.js
 //= require backbone.js
+//= require statics/views/campaign.js
 //= require statics/views/index.js
 //= require o2
 //= require statics/init.js
