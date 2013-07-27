@@ -1,19 +1,17 @@
 Workspace = Backbone.Router.extend({
   routes: {
     "": "index",
-    "help":                 "help",    // #help
     "search/:query":        "search",  // #search/kiwis
-    "search/:query/p:page": "search"   // #search/kiwis/p7
   },
 
-  help: function () { },                                   
-  
   index: function () {
-    view = new Foo({el: $("#content")})
+    view = new IndexView({el: $("#content")})
     view.render()
   },
 
-  search: function (query, page) {
+  help: function () { },
+
+  search: function (query) {
   }
 });
 
