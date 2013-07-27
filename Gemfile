@@ -34,9 +34,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :assets do
+group :assets do 
   gem 'handlebars_assets'
 end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
