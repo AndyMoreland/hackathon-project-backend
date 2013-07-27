@@ -2,7 +2,7 @@ Workspace = Backbone.Router.extend({
   routes: {
     ""            :       "index",
     "campaigns"   :       "campaigns",  // #search/kiwis
-    "campaign/:id" :       "campaign",  // #search/kiwis
+    "campaign/:id" :      "campaign",  // #search/kiwis
   },
 
   index: function () {
@@ -10,15 +10,19 @@ Workspace = Backbone.Router.extend({
     view.render()
   },
 
-  campaigns: function () { },
+  campaigns: function () {
+    view = new CampaignListView({el: $("#content")});
+    view.render();
+  },
 
   campaign: function (id) {
     view = new CampaignView({el: $("#content")});
     view.render();
   }
-
 });
 
-window.mainRouter = new Workspace();
+$(document).ready(function () {
+  window.mainRouter = new Workspace();
 
-Backbone.history.start();
+  Backbone.history.start();
+});

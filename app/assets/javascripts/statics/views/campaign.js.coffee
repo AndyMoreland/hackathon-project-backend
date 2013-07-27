@@ -1,7 +1,12 @@
 class CampaignView extends Backbone.View
+  template: HandlebarsTemplates['campaign']
+
   initialize: (options) ->
-    console.log(options.el)
+    @el = options.el
     console.log "campaign!"
+
+  render: ->
+    $(@el).html(@template())
 
 
 window.CampaignView = CampaignView
