@@ -14,5 +14,5 @@
 //= require d3.v3.js
 //= require underscore.js
 //= require backbone.js
-//= require statics/main.js
+//= require statics/views/index.js
 //= require statics/init.js
