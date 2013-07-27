@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727204921) do
+ActiveRecord::Schema.define(version: 20130727222406) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20130727204921) do
     t.integer  "app_id"
     t.string   "test_a"
     t.string   "test_b"
+    t.boolean  "published"
+    t.boolean  "locked"
   end
 
   add_index "campaigns", ["app_id"], name: "index_campaigns_on_app_id"

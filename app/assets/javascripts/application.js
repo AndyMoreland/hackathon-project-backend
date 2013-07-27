@@ -10,10 +10,12 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require require_provide.js
 //= require jquery
 //= require d3.v3.js
 //= require underscore.js
 //= require backbone.js
-//= require o2
+//= require handlebars
 //= require statics/main.js
 //= require statics/init.js
+//= require_tree ./templates

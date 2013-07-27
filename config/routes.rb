@@ -3,9 +3,13 @@ HackathonProjectBackend::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :companies do
-    resources :campaigns do
-      resources :metrics
+    resources :apps do
+      resources :campaigns
     end
+  end
+
+  resources :apps do
+      resources :campaigns
   end
   
   # You can have the root of your site routed with "root"
