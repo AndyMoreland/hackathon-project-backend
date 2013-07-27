@@ -1,7 +1,8 @@
 Workspace = Backbone.Router.extend({
   routes: {
     "": "index",
-    "search/:query":        "search",  // #search/kiwis
+    "campaigns":        "campaigns",  // #search/kiwis
+    "campaign:id":       "campaign",  // #search/kiwis
   },
 
   index: function () {
@@ -9,10 +10,12 @@ Workspace = Backbone.Router.extend({
     view.render()
   },
 
-  help: function () { },
+  campaigns: function () { },
 
-  search: function (query) {
+  campaign: function (id) {
+  
   }
+
 });
 
 window.mainRouter = new Workspace();
