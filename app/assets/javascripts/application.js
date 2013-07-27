@@ -16,6 +16,9 @@
 //= require underscore.js
 //= require backbone.js
 //= require handlebars.js
+//= require handlebars
+//= require statics/collections/campaign.js
+//= require statics/models/campaign.js
 //= require statics/views/campaign.js
 //= require statics/views/index.js
 //= require statics/init.js
