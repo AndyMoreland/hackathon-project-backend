@@ -19,22 +19,25 @@
    ------------------------------------------*/
 tr.campaign {
 
-	border: 1px solid black;
-	display: block;
+  // display: block;
+  height: 75px;
 
-	.status {
-		background-color: #FEE;
-	}
+  .status {
+  	// background-color: #FEE;
+  	// width: 80px;
+    text-transform: uppercase;
+    color: #666;
+    width: 10%
+  }
 
-	.name {
-		
-	}
-	.edit-btn {
-		background-color: #EFE;
-	}
-	.stats-btn {
-		background-color: #EEF;
-	}
+  .name {
+    font-size: 2em;
+  	font-weight: 600;
+  }
+
+  .buttons {
+    width: 15%
+  }
 
     // > * {
     // 	display: inline-block;
