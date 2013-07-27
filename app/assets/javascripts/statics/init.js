@@ -1,20 +1,22 @@
 Workspace = Backbone.Router.extend({
   routes: {
-    "": "index",
-    "help":                 "help",    // #help
-    "search/:query":        "search",  // #search/kiwis
-    "search/:query/p:page": "search"   // #search/kiwis/p7
+    ""            :       "index",
+    "campaigns"   :       "campaigns",  // #search/kiwis
+    "campaign/:id" :       "campaign",  // #search/kiwis
   },
 
-  help: function () { },                                   
-  
   index: function () {
-    view = new Foo({el: $("#content")})
+    view = new IndexView({el: $("#content")})
     view.render()
   },
 
-  search: function (query, page) {
+  campaigns: function () { },
+
+  campaign: function (id) {
+    view = new CampaignView({el: $("#content")});
+    view.render();
   }
+
 });
 
 window.mainRouter = new Workspace();
