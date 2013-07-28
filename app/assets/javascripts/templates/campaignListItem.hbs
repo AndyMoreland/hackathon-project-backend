@@ -1,10 +1,19 @@
 <td class="status">
-	<span class="label label-yellow">Locked</span>
+  {{#if published}}
+    <span class="label label-green">Published</span>
+  {{else}}
+    <span class="label label-lightblue">Not Published</span>
+  {{/if}}
 </td>
-<td class="name">{{name}}</td>
+<td>
+  {{#if locked}}
+    <span class="label label-yellow"><i class="icon-lock"></i> Locked</span>
+  {{/if}}
+</td>
+<td class="name"><h2>{{name}}</h2></td>
 <td class="buttons">
 <div class="btn-group">
-  <a class="btn edit-btn" href="#">Edit</a>
-  <a class="btn stats-btn" href="#">Stats</a>
+  <a class="btn edit-btn large" href="#"><i class="icon-edit"></i> Edit</a>
+  <a class="btn stats-btn large" href="#"><i class="icon-tasks"></i> Stats</a>
 </div>
 </td>

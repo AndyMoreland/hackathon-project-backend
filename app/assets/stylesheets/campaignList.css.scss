@@ -2,5 +2,16 @@
 
   .campaign-list-item {
 
+    .status {
+      text-align: center;
+    }
+
+    td {
+      vertical-align: middle;
+    }
+
+    td:last-child {
+      text-align: right;
+    }
   }
 }
