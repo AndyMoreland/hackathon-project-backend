@@ -10,10 +10,12 @@
     position: absolute;
     left:0;
     width: 20px;
-    opacity: 0.5;
-    height: 50px;
+    height: 62px;
+    border-bottom-left-radius: 40% 18%;
+    border-bottom-right-radius: 40% 18%;
     z-index: 500;
-    background-color: black;
+    border: 1px solid #666666;
+    background: -webkit-linear-gradient(top, #444444 0%, #333333 49%, #222222 51%, #444444 100%);
   }
 }
 
