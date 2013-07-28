@@ -16,7 +16,7 @@ class CollectionView extends Backbone.View
     rowViewEl =
     view = new @rowView(model: model)
     $(@el).append(view.render())
-    views[model] = view
+    @views[model] = view
 
   render: =>
     console.info "Re-rendering", @

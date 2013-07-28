@@ -4,13 +4,23 @@ class CampaignListView extends Backbone.View
   render: =>
     $(@el).html(@template())
     console.log("before")
-    cv = new CollectionView({
-      view: CampaignListView
-      collection: @cc
-      el: $("#campaigns tbody")
-    })
-    console.log("j=a'ijkasdf")
-    cv.render()
+    @cc.fetch( () =>
+      cv = new CollectionView({
+        view: CampaignListView
+        collection: @cc
+        el: $("#campaigns tbody")
+      })
+
+      window.cv = cv;
+
+      console.log("j=a'ijkasdf")
+      cv.render()
+    )
+
+    window.cc = @cc
+
+    console.log("after")
+
     @el
 
   initialize: (options) =>
