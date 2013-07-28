@@ -1,5 +1,7 @@
 class CampaignListItemView extends Backbone.View
   template: HandlebarsTemplates['campaignListItem']
+  tagName: "tr"
+  className: "campaign"
 
   initialize: (options) ->
     console.log "campaign list!"
