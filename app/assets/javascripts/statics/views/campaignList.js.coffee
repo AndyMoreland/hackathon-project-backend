@@ -37,6 +37,7 @@ class CampaignListView extends Backbone.View
       # fix empty lines
       event.preventDefault()
       @newCampaign(event.target.innerText)
+      event.target.innerText = ""
 
   clickCampaignName: (event) ->
     event.target.innerText = "";

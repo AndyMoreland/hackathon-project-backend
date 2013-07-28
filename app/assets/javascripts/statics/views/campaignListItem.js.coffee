@@ -5,9 +5,11 @@ class CampaignListItemView extends Backbone.View
 
   events:
     'click #btn-remove': 'removeItem'
+    'click .lock-btn': 'lockClick'
 
   initialize: (options) ->
     console.log "campaign list item!"
+    @model.on("change", @modelChanged, this)
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
@@ -15,6 +17,13 @@ class CampaignListItemView extends Backbone.View
 
   removeItem: (event) ->
     @model.destroy()
+
+  lockClick: (event) ->
+    @model.set("locked", !@model.get("locked"))
+
+  modelChanged: (event) ->
+    @render()
+    @model.save()
 
 
 window.CampaignListItemView = CampaignListItemView
