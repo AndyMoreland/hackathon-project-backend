@@ -7,13 +7,15 @@
 </td>
 <td class="locked">
   {{#if locked}}
-    <span class="label label-yellow"><i class="icon-lock"></i> Locked</span>
+    <span id="lock-btn" class="label label-yellow lock-btn"><i class="icon-lock"></i> Locked</span>
+  {{else}}
+    <span id="unlock-btn" class="label label-lightblue lock-btn"><i class="icon-unlock"></i> Unocked</span>
   {{/if}}
 </td>
 <td class="name"><h2>{{name}}</h2></td>
 <td class="buttons">
 <div class="btn-group">
-  <a class="btn edit-btn large" href="#campaign/{{ id }}"><i class="icon-edit"></i> Edit</a>
+  <a class="btn edit-btn large {{#if locked}}disabled{{/if}}" href="#campaign/{{ id }}"><i class="icon-edit"></i> Edit</a>
   <a class="btn stats-btn large" href="#campaign/{{ id }}/stats"> <i class="icon-tasks"></i> Stats
   </a>
   <a id="btn-remove" class="btn large">

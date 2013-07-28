@@ -1,6 +1,6 @@
 Workspace = Backbone.Router.extend({
   routes: {
-    ""            :       "index",
+    ""            :       "campaigns",
     "campaigns"   :       "campaigns",  // #search/kiwis
     "campaign/:id" :      "campaign",  // #search/kiwis
   },
@@ -33,7 +33,7 @@ Workspace = Backbone.Router.extend({
 });
 
 $(document).ready(function () {
-    window.mainRouter = new Workspace(function () { 
+    window.mainRouter = new Workspace(function () {
         Backbone.history.start();
     });
 });

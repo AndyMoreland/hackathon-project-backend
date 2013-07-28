@@ -28,6 +28,7 @@ class CampaignsController < ApplicationController
 
   def destroy
     Campaign.destroy(params[:id])
+    
     render :json => { status: :ok }
   end
 
