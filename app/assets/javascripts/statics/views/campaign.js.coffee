@@ -111,13 +111,13 @@ class CampaignView extends Backbone.View
 
   updateSplitValue: (value) =>
     @model.set split: value
-    $(@el).find("#split-test-input").val(value)
+    # $(@el).find("#split-test-input").val(value)
 
   loadDataIntoModel: =>
     @model.set
       test_a: @editors["codeA"].getSession().getValue()
       test_b: @editors["codeB"].getSession().getValue()
-      split: $(@el).find("#split-test-input").val()
+      #split: $(@el).find("#split-test-input").val()
 
   save: (e) =>
     console.log "Saving!"
