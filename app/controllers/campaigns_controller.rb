@@ -12,6 +12,16 @@ class CampaignsController < ApplicationController
     @campaigns = [Campaign.new(name: "first campaign", id: 1, created_at: Time.now, test_a: "hi", test_b: "bye"),
                   Campaign.new(name: "second campaign", id: 2, created_at: Time.now, test_a: "hi", test_b: "bye")]
   end
+  
+  def update
+    @campaign = Campaign.find(params[:id])
+    @campaign.update_attributes(params[:campaign])
+  end
+
+  def create
+    @campaign = Campaign.new(params[:campaign])
+    @campaign.save
+  end
 
   def show
     @campaign = @app.campaigns.published.find(params[:id])
