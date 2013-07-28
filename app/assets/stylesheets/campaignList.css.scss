@@ -30,5 +30,11 @@
       border: 1px solid gray;
     }
 
+    h2[data-placeholder]:not(:focus):not([data-div-placeholder-content]):before {
+      content: attr(data-placeholder);
+      float: left;
+      margin-left: 5px;
+      color: gray;
+    }
   }
 }
