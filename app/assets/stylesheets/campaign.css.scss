@@ -35,6 +35,8 @@
   .code-input {
     width: 100%;
     min-height: 400px;
-    resize: none;
+    border-top: 2px dashed #CCC;
+    border-right: 2px dashed #CCC;
+    border-bottom: 2px dashed #CCC;
   }
 }
