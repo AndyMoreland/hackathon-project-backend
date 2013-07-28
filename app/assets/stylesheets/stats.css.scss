@@ -1,4 +1,11 @@
 .stats-page {
+  h1, h2, h3 {
+    text-align: center;
+  }
+
+  .campaign-name {
+    font-style: italic;
+  }
 
   /* tell the SVG path to be a thin blue line without any area fill */
   path {
