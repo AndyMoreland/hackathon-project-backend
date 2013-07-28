@@ -1,9 +1,43 @@
 <section id="campaigns" class="grid">
-  <h1>Campaigns</h1>
-  <br><br>
-  <table class="table table-striped">
+  <h1 class="space1">Campaigns</h1>
+  <table id="campaign-table" class="table table-striped">
     <tbody>
       <!-- Backbone please fill in the rows here -->
+    </tbody>
+  </table>
+
+  <table id="addRow" class="table">
+    <tbody class="table-footer">
+      <tr class="campaign-list-item">
+        <td class="status">
+          <span class="label label-lightblue">Not Published</span>
+        </td>
+        <td class="locked">
+
+        </td>
+        <td class="name">
+          <h2 id="campaign-name-box" class="placeholder" contenteditable="true">
+            Create new campaign
+          </h2>
+          <!--
+          <div class="input-append">
+            <input type="text" name="newName" />
+            <span class="addon">
+              <button class="btn gray disabled">
+                <i class="icon-ok"></i>
+              </button>
+            </span>
+          </div>
+        -->
+        </td>
+        <td class="buttons">
+          <div class="btn-group">
+            <a class="btn edit-btn large disabled" href="#"><i class="icon-edit"></i> Edit</a>
+            <a class="btn stats-btn large disabled" href="#"><i class="icon-tasks"></i> Stats</a>
+          </div>
+        </td>
+      </tr>
+
     </tbody>
   </table>
 </div>

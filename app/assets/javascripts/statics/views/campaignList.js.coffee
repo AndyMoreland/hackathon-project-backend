@@ -16,7 +16,7 @@ class CampaignListView extends Backbone.View
         cv = new CollectionView({
           view: CampaignListItemView
           collection: @cc
-          el: $("#campaigns tbody")
+          el: $("#campaign-table tbody")
         })
         cv.render()
       }

@@ -10,7 +10,7 @@ class CampaignView extends Backbone.View
 
     @el
 
-  added: =>    
+  added: =>
     editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
@@ -30,7 +30,7 @@ class CampaignView extends Backbone.View
       percentB = 97
     if percentB < 2
       percentB = 2
-      
+
     $("#split-test-bar-a").css("width", percentA + "%")
     $("#split-test-bar-b").css("width", percentB + "%")
 
