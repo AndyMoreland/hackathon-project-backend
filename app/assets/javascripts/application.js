@@ -17,6 +17,7 @@
 //= require backbone.js
 //= require handlebars.js
 //= require_tree ./templates/
+//= require collection_view.js
 //= require statics/models/campaign.js
 //= require statics/collections/campaigns.js
 //= require statics/views/campaignList.js
