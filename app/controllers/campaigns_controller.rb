@@ -26,6 +26,10 @@ class CampaignsController < ApplicationController
     @campaign = @app.campaigns.published.find(params[:id])
   end
 
+  def destroy
+    Campaign.destroy(params[:id])
+  end
+
   protected
   def preload_app
     @app = App.find(params[:app_id])
