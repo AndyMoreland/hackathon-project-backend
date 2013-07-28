@@ -1,8 +1,9 @@
 Workspace = Backbone.Router.extend({
   routes: {
     ""            :       "campaigns",
-    "campaigns"   :       "campaigns",  // #search/kiwis
-    "campaign/:id" :      "campaign",  // #search/kiwis
+    "campaigns"   :       "campaigns",
+    "campaign/:id" :      "campaign",
+    "stats/:id": "stats"
   },
 
   initialize: function (doneCallback) {
@@ -22,6 +23,11 @@ Workspace = Backbone.Router.extend({
 
   campaign: function (id) {
     view = new CampaignView({ model: this.campaigns.get(parseInt(id, 10)) });
+    this.render(view);
+  },
+
+  stats: function(id) {
+    view = new StatsView({ model: this.campaigns.get(parseInt(id, 10)) });
     this.render(view);
   },
 
