@@ -1,24 +1,24 @@
 <td class="status">
   {{#if published}}
-    <span class="label label-green">Published</span>
+    <span class="label label-green publish-btn">Published</span>
   {{else}}
-    <span class="label label-lightblue">Not Published</span>
+    <span class="label label-lightblue publish-btn">Not Published</span>
   {{/if}}
 </td>
 <td class="locked">
   {{#if locked}}
-    <span id="lock-btn" class="label label-yellow lock-btn"><i class="icon-lock"></i> Locked</span>
+    <span class="label label-yellow lock-btn" data-locked="yes"><i class="icon-lock"></i> Locked</span>
   {{else}}
-    <span id="unlock-btn" class="label label-lightblue lock-btn"><i class="icon-unlock"></i> Unocked</span>
+    <span class="label label-lightblue lock-btn" data-locked="no"><i class="icon-unlock"></i> Unocked</span>
   {{/if}}
 </td>
 <td class="name"><h2>{{name}}</h2></td>
 <td class="buttons">
 <div class="btn-group">
   <a class="btn edit-btn large {{#if locked}}disabled{{/if}}" href="#campaign/{{ id }}"><i class="icon-edit"></i> Edit</a>
-  <a class="btn stats-btn large" href="#campaign/{{ id }}/stats"> <i class="icon-tasks"></i> Stats
+  <a class="btn stats-btn large" href="#stats/{{ id }}"> <i class="icon-tasks"></i> Stats
   </a>
-  <a id="btn-remove" class="btn large">
+  <a class="btn-remove btn large {{#if locked}}disabled{{/if}}" href="#">
     <i class="icon-remove"></i>
   </a>
 
