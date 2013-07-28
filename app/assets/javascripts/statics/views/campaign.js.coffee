@@ -32,6 +32,10 @@ class CampaignView extends Backbone.View
 
         console.log("moving: "+x);
         pos =  @reltiveStart + x
+        if(pos < 0)
+          pos = 0
+        if (pos > ($("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() + 5))
+          pos = $("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() +5
         @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
 
         #moveBox(x, y);
