@@ -57,6 +57,7 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
+    mysql2 (0.3.13)
     o2-rails (0.8.0)
       railties (>= 3.0)
       sass
@@ -118,6 +119,7 @@ DEPENDENCIES
   handlebars_assets
   jbuilder (~> 1.2)
   jquery-rails
+  mysql2
   o2-rails (= 0.8.0)
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)

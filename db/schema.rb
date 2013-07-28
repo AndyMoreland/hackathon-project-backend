@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(version: 20130727222406) do
     t.datetime "updated_at"
   end
 
-  add_index "apps", ["company_id"], name: "index_apps_on_company_id"
+  add_index "apps", ["company_id"], name: "index_apps_on_company_id", using: :btree
 
   create_table "campaigns", force: true do |t|
     t.integer  "company_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.decimal  "split"
+    t.integer  "split"
     t.integer  "app_id"
     t.string   "test_a"
     t.string   "test_b"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20130727222406) do
     t.boolean  "locked"
   end
 
-  add_index "campaigns", ["app_id"], name: "index_campaigns_on_app_id"
-  add_index "campaigns", ["company_id"], name: "index_campaigns_on_company_id"
+  add_index "campaigns", ["app_id"], name: "index_campaigns_on_app_id", using: :btree
+  add_index "campaigns", ["company_id"], name: "index_campaigns_on_company_id", using: :btree
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -52,6 +52,6 @@ ActiveRecord::Schema.define(version: 20130727222406) do
     t.datetime "updated_at"
   end
 
-  add_index "metrics", ["campaign_id"], name: "index_metrics_on_campaign_id"
+  add_index "metrics", ["campaign_id"], name: "index_metrics_on_campaign_id", using: :btree
 
 end

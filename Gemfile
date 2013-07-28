@@ -5,6 +5,8 @@ gem 'rails', '4.0.0'
 
 gem 'o2-rails', '0.8.0'
 
+gem 'mysql2'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
