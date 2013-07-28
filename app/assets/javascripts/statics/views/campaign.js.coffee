@@ -12,7 +12,6 @@ class CampaignView extends Backbone.View
   initialize: =>
     @model = @options.model
     @editors = {}
-    console.log @split
     @model.on "change:split", @renderSplitTestBar
 
   postRender: ->
@@ -22,16 +21,11 @@ class CampaignView extends Backbone.View
     Touch(@slider, {
       #topos
       onStart: (e) =>
-        console.log(e)
         @startLoc = e.x;
         @reltiveStart = e.x - $("#split-test-bar-a").offset().left
         @right = $("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() + 5
       onMove: (e) =>
-        console.log(e)
-
         x = e.x - @startLoc
-
-        console.log("moving: "+x);
         pos =  @reltiveStart + x
         if(pos < 0)
           pos = 0
@@ -39,8 +33,6 @@ class CampaignView extends Backbone.View
           pos = @right
         @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
         @updateSplitValue(Math.round(100*pos/@right))
-
-        #moveBox(x, y);
 
         e.preventDefault()
         e.stopPropagation()
@@ -84,7 +76,7 @@ class CampaignView extends Backbone.View
       barB.hide()
     else if percentB == 100
       barA.hide()
-    else 
+    else
       barA.show()
       barB.show()
     pos = Math.round(percentA*9.8)
