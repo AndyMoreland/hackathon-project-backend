@@ -15,6 +15,16 @@ class CampaignsController < ApplicationController
                   Campaign.new(name: "Unpublished Campaign", id: 4, created_at: Time.now, test_a: "test a", test_b: "test b", published: false, locked: false),
                 ]
   end
+  
+  def update
+    @campaign = Campaign.find(params[:id])
+    @campaign.update_attributes(params[:campaign])
+  end
+
+  def create
+    @campaign = Campaign.new(params[:campaign])
+    @campaign.save
+  end
 
   def show
     @campaign = @app.campaigns.published.find(params[:id])

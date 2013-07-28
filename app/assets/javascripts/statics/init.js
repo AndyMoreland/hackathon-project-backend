@@ -27,6 +27,8 @@ Workspace = Backbone.Router.extend({
 
   render: function(view) {
     $("#content").html(view.render());
+    if(view.added)
+      view.added()
   }
 });
 

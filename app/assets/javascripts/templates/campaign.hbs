@@ -1,15 +1,25 @@
 <div class="row space2">
-  <div class="span11">
-    <div id="split-test-bar" class="progress-bar-container progress-bar-well fat">
-        <div class="progress-bar progress-bar-yellow fat"></div>
-    </div>
+  <div class="span12">
+    <div id="split-test-bar-a" class="progress-bar progress-bar-yellow fat"></div>
+    <div id="split-test-bar-b" class="progress-bar progress-bar-red fat"></div>
   </div>
-  <textarea id="progress-bar-input" class="span1" style="resize: none;"></textarea>
+</div>
+<div class="row">
+  <div class="span6">
+    <label>Split amount: </label>
+    <input type="text" id="split-test-input" class="span1"/>
+  </div>
 </div>
 <div class="row space2">
   <div class="span6">
     <h2>A</h2>
-    <textarea id="inputA" class="code-input"></textarea>
+    {{! <textarea id="inputA" class="code-input"></textarea> }}
+    <div id="editor">
+      function foo(items) {
+        var x = "All this is syntax highlighted";
+        return x;
+      }
+    </div>
   </div>
   <div class="span6">
     <h2>B</h2>
@@ -24,3 +34,17 @@
   <button class="btn large gray span4 offset1" href="#">Cancel</button>
   <button class="btn large span4 offset2" href="#">Save campaign</button>
 </div>
+
+{{! <pre id="editor">function foo(items) {
+    var i;
+    for (i = 0; i &lt; items.length; i++) {
+        alert("Ace Rocks " + items[i]);
+    }
+}</pre>
+    
+<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.getSession().setMode("ace/mode/javascript");
+</script> }}
