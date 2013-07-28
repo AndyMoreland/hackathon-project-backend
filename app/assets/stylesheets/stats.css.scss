@@ -1,7 +1,12 @@
 .stats-page {
-  h1, h2, h3 {
+  h1, h2, h3, .help-block {
     text-align: center;
   }
+
+  .help-block {
+    margin-bottom: 10px;
+  }
+
 
   .campaign-name {
     font-style: italic;
