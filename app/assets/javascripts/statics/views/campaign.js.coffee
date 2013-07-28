@@ -29,14 +29,15 @@ class CampaignView extends Backbone.View
       onMove: (e) =>
         offset = 10
         x = e.x - @startLoc
-        pos =  @reltiveStart + x - offset
+        pos =  @reltiveStart + x
         if(pos < 0)
           pos = 0
         if (pos > @right)
           pos = @right
-        @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
+        render = pos - 2
+        @slider.css("-webkit-transform", 'translateX(' + render + 'px)');
 
-        value = Math.round(100*pos/@right)
+        value = Math.round(100*(pos)/@right)
         @updateSplitValue(value)
 
         e.preventDefault()
@@ -51,6 +52,9 @@ class CampaignView extends Backbone.View
         console.log("click");
 
     });
+    percentA = parseInt(@model.get("split"), 10) 
+    pos = Math.round(percentA*9.7)
+    $(@el).find("#split-test-slider").css("-webkit-transform", 'translateX(' + pos + 'px)');
 
   foo: ->
     alert("bar")
@@ -87,7 +91,6 @@ class CampaignView extends Backbone.View
       barA.show()
       barB.show()
     pos = Math.round(percentA*9.8)
-    $(@el).find("#split-test-slider").css("-webkit-transform", 'translateX(' + pos + 'px)');
 
     @updateBarText(percentA)
 
