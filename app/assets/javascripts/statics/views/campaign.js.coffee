@@ -9,6 +9,7 @@ class CampaignView extends Backbone.View
   initialize: =>
     @model = @options.model
     @editors = {}
+
     @model.on "change:split", @renderSplitTestBar
 
   foo: ->
@@ -16,6 +17,7 @@ class CampaignView extends Backbone.View
 
   render: =>
     $(@el).html(@template(@model.toJSON()))
+
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
     @renderSplitTestBar()
@@ -23,6 +25,7 @@ class CampaignView extends Backbone.View
     @el
 
   initCodeEditor: (editorID) =>
+
     editor = ace.edit($(@el).find("#" + editorID)[0]);
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/objectivec");
@@ -63,7 +66,7 @@ class CampaignView extends Backbone.View
       success: () =>
         @$("#save").addClass("gray").text("Saved!")
         setTimeout () =>
-          @$("#save").removeClass("gray").text("Save Camp")
+          @$("#save").removeClass("gray").text("Save Campaign")
         , 1000
       })
 
