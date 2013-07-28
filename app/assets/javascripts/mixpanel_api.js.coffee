@@ -5,7 +5,7 @@ class MixpanelRequest
     @apiSecret = "c1906196873ae29c5b7e6dc1a14debdf"
     params["api_key"] = @apiKey
     params["expire"] = @expireTime()
-    (params["event"] = '["' + params["event"] + '"]') if params["event"]
+    (params["event"] = params["event"]) if params["event"]
     params["sig"] = @computeSig(params)
     $.getJSON(url+"?callback=?", params, callback).fail () -> console.log(arguments)
 
