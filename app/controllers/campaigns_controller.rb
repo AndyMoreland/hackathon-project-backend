@@ -6,6 +6,11 @@ class CampaignsController < ApplicationController
     else
       @campaigns = @app.campaigns
     end
+
+    # bullshit:
+
+    @campaigns = [Campaign.new(name: "first campaign", id: 1, created_at: Time.now, test_a: "hi", test_b: "bye"),
+                  Campaign.new(name: "second campaign", id: 2, created_at: Time.now, test_a: "hi", test_b: "bye")]
   end
 
   def show
