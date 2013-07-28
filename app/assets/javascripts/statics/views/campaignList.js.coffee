@@ -53,8 +53,8 @@ class CampaignListView extends Backbone.View
     event.target.innerText = ""
     delete(event.target.dataset.divPlaceholderContent)
 
-
   newCampaign: (name) ->
+    console.log("foo")
     model = new CampaignModel({
       published: false
       locked: false

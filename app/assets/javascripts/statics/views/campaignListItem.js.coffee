@@ -9,7 +9,7 @@ class CampaignListItemView extends Backbone.View
 
   initialize: (options) ->
     console.log "campaign list item!"
-    @model.on("change", @modelChanged, this)
+    @model.on("change:locked", @modelChanged, this)
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
