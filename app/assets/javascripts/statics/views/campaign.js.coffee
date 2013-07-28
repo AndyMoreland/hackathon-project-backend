@@ -66,7 +66,7 @@ class CampaignView extends Backbone.View
       success: () =>
         @$("#save").addClass("gray").text("Saved!")
         setTimeout () =>
-          @$("#save").removeClass("gray").text("Save Camp")
+          @$("#save").removeClass("gray").text("Save Campaign")
         , 1000
       })
 
