@@ -15,7 +15,7 @@
 <td class="name"><h2>{{name}}</h2></td>
 <td class="buttons">
 <div class="btn-group">
-  <a class="btn edit-btn large" href="#campaign/{{ id }}"><i class="icon-edit"></i> Edit</a>
+  <a class="btn edit-btn large {{#if locked}}disabled{{/if}}" href="#campaign/{{ id }}"><i class="icon-edit"></i> Edit</a>
   <a class="btn stats-btn large" href="#campaign/{{ id }}/stats"> <i class="icon-tasks"></i> Stats
   </a>
   <a id="btn-remove" class="btn large">

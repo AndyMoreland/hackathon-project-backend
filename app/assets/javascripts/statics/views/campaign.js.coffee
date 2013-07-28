@@ -4,7 +4,9 @@ class CampaignView extends Backbone.View
 
   events:
     "blur #split-test-input" : "updateSplitValue"
+    "keyup #split-test-input": "maybeUpdateSplitValue"
     "click button[name=save]" : "save"
+
 
   initialize: =>
     @model = @options.model
@@ -48,6 +50,16 @@ class CampaignView extends Backbone.View
 
     $(@el).find("#split-test-bar-a").css("width", percentA + "%")
     $(@el).find("#split-test-bar-b").css("width", percentB + "%")
+
+  maybeUpdateSplitValue: (event) ->
+    if event.which == 13
+      @updateSplitValue()
+      return
+
+    value = parseInt(event.target.value)
+    if value >= 0 and value <= 100
+      @updateSplitValue()
+
 
   updateSplitValue: =>
     console.log "yo, updating value"
