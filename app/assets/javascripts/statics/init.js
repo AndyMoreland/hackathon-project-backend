@@ -7,6 +7,8 @@ Workspace = Backbone.Router.extend({
 
   initialize: function (options) {
     this.campaigns = new CampaignsCollection()
+    this.campaigns.fetch();
+    console.log(this.campaigns);
   },
 
   index: function () {

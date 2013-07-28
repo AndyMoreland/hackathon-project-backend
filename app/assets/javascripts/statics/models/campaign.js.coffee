@@ -1,7 +1,8 @@
 class CampaignModel extends Backbone.Model
   defaults:
     id: null
-    status: null
+    published: null
+    locked: null
     name: ""
 
 
