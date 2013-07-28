@@ -4,6 +4,7 @@ class CampaignModel extends Backbone.Model
     published: null
     locked: null
     name: ""
+    app_id: 1
 
 
 window.CampaignModel = CampaignModel

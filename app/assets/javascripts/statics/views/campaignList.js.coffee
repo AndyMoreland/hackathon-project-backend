@@ -46,7 +46,7 @@ class CampaignListView extends Backbone.View
     if event.target.innerText != ""
       event.target.dataset.divPlaceholderContent = 'true';
     else
-      @blurPlaceholder()
+      @blurPlaceholder(event)
 
   blurPlaceholder: (event) ->
     event.target.innerText = ""
