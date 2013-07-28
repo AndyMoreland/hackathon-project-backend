@@ -16,6 +16,7 @@
 //= require underscore.js
 //= require backbone.js
 //= require handlebars.js
+//= require touch.js
 //= require src/ace.js
 //= require_tree ./templates/
 //= require collection_view.js
