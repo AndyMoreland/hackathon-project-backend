@@ -6,6 +6,7 @@ class CampaignView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
+    @el
 
 
 window.CampaignView = CampaignView

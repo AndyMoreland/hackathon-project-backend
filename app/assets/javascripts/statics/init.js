@@ -11,18 +11,22 @@ Workspace = Backbone.Router.extend({
   },
 
   index: function () {
-    view = new IndexView({el: $("#content")})
-    view.render()
+    view = new IndexView()
+    this.render(view);
   },
 
   campaigns: function () {
-    view = new CampaignListView({el: $("#content")});
-    view.render();
+    view = new CampaignListView();
+    this.render(view);
   },
 
   campaign: function (id) {
-    view = new CampaignView({el: $("#content")});
-    view.render();
+    view = new CampaignView();
+    this.render(view);
+  },
+
+  render: function(view) {
+    $("#content").html(view.render());
   }
 });
 

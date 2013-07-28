@@ -1,11 +1,8 @@
 class CampaignListView extends Backbone.View
   template: HandlebarsTemplates['campaignList']
-  tagName: "div"
-  className: "campaignListPage"
+  className: "campaign-list-page"
 
   initialize: (options) ->
-    console.log("foo")
-    @el = options.el
     @cc = new CampaignsCollection()
 
     # If the campaign collection changes, redner the list
@@ -24,7 +21,6 @@ class CampaignListView extends Backbone.View
         cv.render()
       }
     )
-
     @el
 
 
