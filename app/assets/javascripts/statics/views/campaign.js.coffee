@@ -10,11 +10,15 @@ class CampaignView extends Backbone.View
 
     @el
 
-  added: =>    
-    editor = ace.edit("editor");
+  initCodeEditor: (editorID) =>
+    editor = ace.edit(editorID);
     editor.setTheme("ace/theme/monokai");
     editor.getSession().setMode("ace/mode/javascript");
 
+
+  viewRendered: =>    
+    @initCodeEditor("codeA")
+    @initCodeEditor("codeB")
 
   updateSplitTestBar: (e) =>
 
