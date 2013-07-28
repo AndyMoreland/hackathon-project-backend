@@ -24,9 +24,12 @@ class CampaignView extends Backbone.View
         @startLoc = e.x;
         @reltiveStart = e.x - $("#split-test-bar-a").offset().left
         @right = $("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() + 5
+        $(@el).css("cursor", "move")
+        $("html").css("user-select", "none")
       onMove: (e) =>
+        offset = 10
         x = e.x - @startLoc
-        pos =  @reltiveStart + x
+        pos =  @reltiveStart + x - offset
         if(pos < 0)
           pos = 0
         if (pos > @right)
@@ -38,6 +41,8 @@ class CampaignView extends Backbone.View
         e.stopPropagation()
 
       onEnd: (e) ->
+        $(@el).css("cursor", "default")
+        $("html").css("user-select", "default")
         console.log("end")
 
       onClick: (e) ->
