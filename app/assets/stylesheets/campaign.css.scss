@@ -1,0 +1,39 @@
+.campaign-page {
+
+  /* ------------------------------------------
+  Campaign Editor
+  ------------------------------------------*/
+
+  .fat {
+
+    $height: 50px;
+
+    &.progress-bar-container, &.progress-bar {
+    height: $height;
+    border-radius: 5px;
+    }
+
+    &.progress-bar {
+    height: $height - 4px;
+    border-radius: 3px;
+    width: 500px;
+    }
+
+  }
+
+  // .progress-bar-container.progress-bar-well.fat {
+  //    height: 50px;
+  //    border-radius: 5px
+  // }
+
+  // .progress-bar.progress-bar-well.fat {
+  //    height: 50px;
+  //    border-radius: 5px
+  // }
+
+  .code-input {
+    width: 100%;
+    min-height: 400px;
+    resize: none;
+  }
+}
