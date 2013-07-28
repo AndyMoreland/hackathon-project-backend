@@ -54,7 +54,13 @@ class CampaignView extends Backbone.View
   save: (e) =>
     console.log "Saving!"
     @loadDataIntoModel()
-    @model.save()
+    @model.save(null, {
+      success: () =>
+        @$("#save").addClass("gray").text("Saved!")
+        setTimeout () => 
+          @$("#save").removeClass("gray").text("Save Campaign")
+        , 1000
+      })
 
 
 window.CampaignView = CampaignView
