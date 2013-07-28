@@ -5,9 +5,9 @@ Workspace = Backbone.Router.extend({
     "campaign/:id" :      "campaign",  // #search/kiwis
   },
 
-  initialize: function (options) {
-    this.campaigns = new CampaignsCollection()
-    this.campaigns.fetch();
+  initialize: function (doneCallback) {
+    this.campaigns = new CampaignsCollection();
+    this.campaigns.fetch( { success: doneCallback } );
   },
 
   index: function () {
@@ -16,22 +16,24 @@ Workspace = Backbone.Router.extend({
   },
 
   campaigns: function () {
-    view = new CampaignListView();
+    view = new CampaignListView({collection: this.campaigns});
     this.render(view);
   },
 
   campaign: function (id) {
-    view = new CampaignView();
+    view = new CampaignView({ model: this.campaigns.get(parseInt(id, 10)) });
     this.render(view);
   },
 
   render: function(view) {
     $("#content").html(view.render());
+    if(view.viewRendered)
+      view.viewRendered()
   }
 });
 
 $(document).ready(function () {
-  window.mainRouter = new Workspace();
-
-  Backbone.history.start();
+    window.mainRouter = new Workspace(function () { 
+        Backbone.history.start();
+    });
 });

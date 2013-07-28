@@ -9,14 +9,15 @@
     $height: 50px;
 
     &.progress-bar-container, &.progress-bar {
-    height: $height;
-    border-radius: 5px;
+      height: $height;
+      border-radius: 5px;
     }
 
     &.progress-bar {
-    height: $height - 4px;
-    border-radius: 3px;
-    width: 500px;
+      height: $height - 4px;
+      border-radius: 3px;
+      width: 49%;
+      display: inline-block;
     }
 
   }
@@ -34,6 +35,8 @@
   .code-input {
     width: 100%;
     min-height: 400px;
-    resize: none;
+    border-top: 2px dashed #CCC;
+    border-right: 2px dashed #CCC;
+    border-bottom: 2px dashed #CCC;
   }
 }
