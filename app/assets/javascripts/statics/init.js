@@ -5,6 +5,10 @@ Workspace = Backbone.Router.extend({
     "campaign/:id" :      "campaign",  // #search/kiwis
   },
 
+  initialize: function (options) {
+    this.campaigns = new CampaignsCollection()
+  },
+
   index: function () {
     view = new IndexView({el: $("#content")})
     view.render()
