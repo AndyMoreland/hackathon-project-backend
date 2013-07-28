@@ -15,4 +15,8 @@
 /log/*.log
 /tmp
 
+/test
+
+*#*
+
 *.DS_STORE

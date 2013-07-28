@@ -2,13 +2,76 @@
 <html>
 <head>
   <title>HackathonProjectBackend</title>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag  "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
-<div id = "content">
-</div>
+  <div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+      <a href="#" class="brand">
+        Mab
+      </a>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Campaigns</a></li>
+        <li><a href="#">Help</a></li>
+      </ul>
+      <ul class="nav pull-right">
+        <a class="yellow btn" href="#login">
+          Login
+        </a>
+      </ul>
+    </div>
+    </div>
+  </div>
+  <div class="container">
+    <section id="campaigns" class="grid">
+      <h1>Campaigns</h1>
+      <br><br>
+      <table id="campaigns" class="table">
+        <tbody>
+        <tr class="campaign">
+          <td class="status">
+            <p><span class="dot dot-green"></span> Active</p>
+          </td>
+          <td class="name">Email Button</td>
+          <td class="buttons">
+            <div class="btn-group">
+              <a class="btn edit-btn" href="#">Edit</a>
+              <a class="btn stats-btn" href="#">Stats</a>
+            </div>
+          </td>
+        </tr>
+        <tr class="campaign">
+          <td class="status">
+            <p><span class="dot dot-green"></span> Active</p>
+          </td>          <td class="name">Email Button</td>
+          <td class="buttons">
+            <div class="btn-group">
+              <a class="btn edit-btn" href="#">Edit</a>
+              <a class="btn stats-btn" href="#">Stats</a>
+            </div>
+          </td>
+        </tr>
+        <tr class="campaign">
+          <td class="status">
+            <p><span class="dot"></span> Ready</p>
+          </td>          <td class="name">Email Button</td>
+          <td class="buttons">
+            <div class="btn-group">
+              <a class="btn edit-btn" href="#">Edit</a>
+              <a class="btn stats-btn" href="#">Stats</a>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  <div id = "content"><%= yield %></div>
 </body>
 </html>
