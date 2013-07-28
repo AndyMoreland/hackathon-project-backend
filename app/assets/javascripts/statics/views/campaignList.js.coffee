@@ -6,8 +6,8 @@ class CampaignListView extends Backbone.View
     @cc = new CampaignsCollection()
 
     # If the campaign collection changes, redner the list
-  	# @model.on "change", @render, this
-	  console.log "campaign list!"
+    # @model.on "change", @render, this
+    console.log "campaign list!"
 
   render: =>
     $(@el).html(@template())
@@ -23,5 +23,6 @@ class CampaignListView extends Backbone.View
     )
 
     @el
+
 
 window.CampaignListView = CampaignListView
