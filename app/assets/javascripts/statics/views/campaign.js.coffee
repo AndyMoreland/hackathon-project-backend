@@ -14,7 +14,7 @@ class CampaignView extends Backbone.View
   foo: ->
     alert("bar")
 
-  render: ->
+  render: =>
     $(@el).html(@template(@model.toJSON()))
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
@@ -23,7 +23,7 @@ class CampaignView extends Backbone.View
     @el
 
   initCodeEditor: (editorID) =>
-    editor = ace.edit($(@el).find("#" + editorID));
+    editor = ace.edit($(@el).find("#" + editorID)[0]);
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/objectivec");
     @editors[editorID] = editor
@@ -61,7 +61,7 @@ class CampaignView extends Backbone.View
     @model.save(null, {
       success: () =>
         @$("#save").addClass("gray").text("Saved!")
-        setTimeout () => 
+        setTimeout () =>
           @$("#save").removeClass("gray").text("Save Camp")
         , 1000
       })
