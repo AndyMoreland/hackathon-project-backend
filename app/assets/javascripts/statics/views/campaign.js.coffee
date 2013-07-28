@@ -3,30 +3,34 @@ class CampaignView extends Backbone.View
   className: "campaign-page"
 
   events:
-    "change #split-test-input" : "updateSplitTestBar"
+    "all #split-test-input" : "updateSplitTestBar"
     "click button[name=save]" : "save"
 
   initialize: =>
     @model = @options.model
     @editors = {}
+    @model.on "change:split", @render, this
+
+  foo: ->
+    alert("bar")
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
+    @initCodeEditor("codeA")
+    @initCodeEditor("codeB")
+    @model.set(split:20)
 
     @el
 
   initCodeEditor: (editorID) =>
-    editor = ace.edit(editorID);
+    editor = ace.edit($(@el).find("#" + editorID));
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/objectivec");
     @editors[editorID] = editor
 
-  viewRendered: =>
-    @initCodeEditor("codeA")
-    @initCodeEditor("codeB")
-
   updateSplitTestBar: (e) =>
 
+    console.log "updating bar"
     percentA = parseInt(e.target.value)
     percentB = 100 - percentA
 
@@ -58,7 +62,7 @@ class CampaignView extends Backbone.View
       success: () =>
         @$("#save").addClass("gray").text("Saved!")
         setTimeout () => 
-          @$("#save").removeClass("gray").text("Save Campaign")
+          @$("#save").removeClass("gray").text("Save Camp")
         , 1000
       })
 
