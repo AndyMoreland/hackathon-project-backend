@@ -13,17 +13,11 @@
 <div class="row space2">
   <div class="span6">
     <h2>A</h2>
-    <div id="codeA" class="code-input">int main( int argc, const char *argv[] ) {
-          printf( "hello world\n" );
-          return 0;
-      }</div>
+    <div id="codeA" class="code-input">{{ test_a }}</div>
   </div>
   <div class="span6">
     <h2>B</h2>
-    <div id="codeB" class="code-input">int main( int argc, const char *argv[] ) {
-          printf( "hello world\n" );
-          return 0;
-      }</div>
+    <div id="codeB" class="code-input">{{ test_b }}</div>
   </div>
 </div>
 <br>
@@ -34,17 +28,3 @@
   <button class="btn large gray span4 offset1" name="cancel" href="#">Cancel</button>
   <button class="btn large span4 offset2" name="save" href="#">Save campaign</button>
 </div>
-
-{{! <pre id="editor">function foo(items) {
-    var i;
-    for (i = 0; i &lt; items.length; i++) {
-        alert("Ace Rocks " + items[i]);
-    }
-}</pre>
-    
-<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/twilight");
-    editor.getSession().setMode("ace/mode/javascript");
-</script> }}

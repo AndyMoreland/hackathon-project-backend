@@ -6,24 +6,20 @@ class CampaignsController < ApplicationController
     else
       @campaigns = @app.campaigns
     end
-
-    # bullshit:
-
-    @campaigns = [Campaign.new(name: "first campaign", id: 1, created_at: Time.now, test_a: "hi", test_b: "bye", published: true, locked: false),
-                  Campaign.new(name: "second campaign", id: 2, created_at: Time.now, test_a: "hi", test_b: "bye", published: false, locked: false),
-                  Campaign.new(name: "Locked Campaign", id: 3, created_at: Time.now, test_a: "code1", test_b: "code2", published: true, locked: true),
-                  Campaign.new(name: "Unpublished Campaign", id: 4, created_at: Time.now, test_a: "test a", test_b: "test b", published: false, locked: false),
-                ]
   end
   
   def update
     @campaign = Campaign.find(params[:id])
-    @campaign.update_attributes(params[:campaign])
+    @campaign.update_attributes(params[:campaign].permit!)
+    
+    render :json => { status: :ok } 
   end
 
   def create
     @campaign = Campaign.new(params[:campaign])
     @campaign.save
+    
+    render :json => { status: :ok } 
   end
 
   def show

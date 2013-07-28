@@ -8,9 +8,10 @@ class CampaignView extends Backbone.View
 
   initialize: =>
     @model = @options.model
+    @editors = {}
 
   render: ->
-    $(@el).html(@template())
+    $(@el).html(@template(@model.toJSON()))
 
     @el
 
@@ -18,6 +19,7 @@ class CampaignView extends Backbone.View
     editor = ace.edit(editorID);
     editor.setTheme("ace/theme/github");
     editor.getSession().setMode("ace/mode/objectivec");
+    @editors[editorID] = editor
 
   viewRendered: =>
     @initCodeEditor("codeA")
@@ -41,9 +43,16 @@ class CampaignView extends Backbone.View
     $("#split-test-bar-a").css("width", percentA + "%")
     $("#split-test-bar-b").css("width", percentB + "%")
 
+  loadDataIntoModel: =>
+    @model.set
+      test_a: @editors["codeA"].getSession().getValue()
+      test_b: @editors["codeB"].getSession().getValue()
+      split: $(@el).find("#split-test-input").val()
+
+
   save: (e) =>
-    window.a = this
     console.log "Saving!"
+    @loadDataIntoModel()
     @model.save()
 
 

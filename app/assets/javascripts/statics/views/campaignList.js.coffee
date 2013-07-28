@@ -11,12 +11,13 @@ class CampaignListView extends Backbone.View
 
   render: =>
     $(@el).html(@template())
+
     cv = new CollectionView
       view: CampaignListItemView
       collection: @cc
-      el: $("#campaigns tbody")
-
+      el: @el
     cv.render()
+
     @el
 
 
