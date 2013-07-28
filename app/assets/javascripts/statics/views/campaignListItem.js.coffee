@@ -4,7 +4,7 @@ class CampaignListItemView extends Backbone.View
   className: "campaign"
 
   initialize: (options) ->
-    console.log "campaign list!"
+    console.log "campaign list item!"
 
   render: ->
     $(@el).html(@template(@model.toJSON()))
