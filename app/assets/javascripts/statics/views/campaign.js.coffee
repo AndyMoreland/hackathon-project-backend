@@ -3,21 +3,25 @@ class CampaignView extends Backbone.View
   className: "campaign-page"
 
   events:
-    "keyup #split-test-input" : "updateSplitTestBar"
+    "blur #split-test-input" : "updateSplitValue"
     "click button[name=save]" : "save"
 
   initialize: =>
     @model = @options.model
     @editors = {}
-    # @model.on "reset:split", @foo, this
+
+    @model.on "change:split", @renderSplitTestBar
 
   foo: ->
     alert("bar")
 
   render: =>
     $(@el).html(@template(@model.toJSON()))
-    # @initCodeEditor("codeA")
-    # @initCodeEditor("codeB")
+
+    @initCodeEditor("codeA")
+    @initCodeEditor("codeB")
+    @renderSplitTestBar()
+
     @el
 
   initCodeEditor: (editorID) =>
@@ -27,13 +31,12 @@ class CampaignView extends Backbone.View
     editor.getSession().setMode("ace/mode/objectivec");
     @editors[editorID] = editor
 
-  updateSplitTestBar: (e) =>
-
-    percentA = parseInt(e.target.value)
+  renderSplitTestBar: =>
+    percentA = parseInt(@model.get("split"), 10)
     percentB = 100 - percentA
 
-    barA = $("#split-test-bar-a")
-    barB = $("#split-test-bar-b")
+    barA = $(@el).find("#split-test-bar-a")
+    barB = $(@el).find("#split-test-bar-b")
 
     if percentA == 100
       barB.hide()
@@ -43,15 +46,18 @@ class CampaignView extends Backbone.View
       barA.show()
       barB.show()
 
-    $("#split-test-bar-a").css("width", percentA + "%")
-    $("#split-test-bar-b").css("width", percentB + "%")
+    $(@el).find("#split-test-bar-a").css("width", percentA + "%")
+    $(@el).find("#split-test-bar-b").css("width", percentB + "%")
+
+  updateSplitValue: =>
+    console.log "yo, updating value"
+    @model.set split: $(@el).find("#split-test-input").val()
 
   loadDataIntoModel: =>
     @model.set
       test_a: @editors["codeA"].getSession().getValue()
       test_b: @editors["codeB"].getSession().getValue()
       split: $(@el).find("#split-test-input").val()
-
 
   save: (e) =>
     console.log "Saving!"

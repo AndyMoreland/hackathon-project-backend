@@ -16,7 +16,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    @campaign = Campaign.new(params[:campaign])
+    @campaign = Campaign.new(params[:campaign].permit!)
     @campaign.save
     
     render :json => { status: :ok } 
