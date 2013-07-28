@@ -9,4 +9,5 @@ json.array! @campaigns do |campaign|
   json.test_b campaign.test_b
   json.published campaign.published
   json.locked campaign.locked
+  json.active_test ::SplitComputer.compute_class(campaign, params[:device_id]) if params[:device_id]
 end
