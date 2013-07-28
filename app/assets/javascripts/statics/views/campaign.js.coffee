@@ -20,17 +20,19 @@ class CampaignView extends Backbone.View
 
 
     Touch(@slider, {
+      #topos
       onStart: (e) =>
         console.log(e)
         @startLoc = e.x;
-
+        @reltiveStart = e.x - $("#split-test-bar-a").offset().left
       onMove: (e) =>
         console.log(e)
+
         x = e.x - @startLoc
 
         console.log("moving: "+x);
-
-        @slider.css("-webkit-transform", 'translateX(' + x + 'px)');
+        pos =  @reltiveStart + x
+        @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
 
         #moveBox(x, y);
 
