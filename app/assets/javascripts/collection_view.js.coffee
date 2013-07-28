@@ -9,14 +9,17 @@ class CollectionView extends Backbone.View
     console.error "CollectionView: Expected element" unless @options.el
 
     @collection.on "add", @addItem
+    @collection.on "remove", @removeItem
     @collection.on "reset", @render
     @views = {}
 
   addItem: (model) =>
-    rowViewEl =
     view = new @rowView(model: model)
     $(@el).append(view.render())
     @views[model] = view
+
+  removeItem: (model) =>
+    @views[model].remove()
 
   render: =>
     console.info "Re-rendering", @
