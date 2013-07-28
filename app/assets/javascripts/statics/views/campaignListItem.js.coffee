@@ -4,7 +4,7 @@ class CampaignListItemView extends Backbone.View
   className: "campaign-list-item"
 
   events:
-    'click #btn-remove': 'removeItem'
+    'click .btn-remove': 'removeItem'
     'click .lock-btn': 'lockClick'
     'click .publish-btn': 'publishClick'
     'click .edit-btn': 'editClick'
@@ -19,7 +19,7 @@ class CampaignListItemView extends Backbone.View
     $(@el).html(@template(@model.toJSON()))
     @el
 
-  removeItem: (event) ->
+  removeItem: (event) =>
     @model.destroy()
 
   lockClick: (event) ->
