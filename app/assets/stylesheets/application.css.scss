@@ -12,3 +12,34 @@
  *= require o2
  *= require_tree .
  */
+
+
+/* ------------------------------------------
+   Campaigns
+   ------------------------------------------*/
+tr.campaign {
+
+  // display: block;
+  height: 75px;
+
+  .status {
+  	// background-color: #FEE;
+  	// width: 80px;
+    text-transform: uppercase;
+    color: #666;
+    width: 10%
+  }
+
+  .name {
+    font-size: 2em;
+  	font-weight: 600;
+  }
+
+  .buttons {
+    width: 15%
+  }
+
+    // > * {
+    // 	display: inline-block;
+    // }
+}
