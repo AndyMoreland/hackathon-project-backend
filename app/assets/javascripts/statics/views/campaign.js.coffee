@@ -25,6 +25,7 @@ class CampaignView extends Backbone.View
         console.log(e)
         @startLoc = e.x;
         @reltiveStart = e.x - $("#split-test-bar-a").offset().left
+        @right = $("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() + 5
       onMove: (e) =>
         console.log(e)
 
@@ -34,9 +35,10 @@ class CampaignView extends Backbone.View
         pos =  @reltiveStart + x
         if(pos < 0)
           pos = 0
-        if (pos > ($("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() + 5))
-          pos = $("#split-test-bar-a").width() + $("#split-test-bar-b").width() - $("#split-test-slider").width() +5
+        if (pos > @right)
+          pos = @right
         @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
+        @updateSplitValue(Math.round(100*pos/@right))
 
         #moveBox(x, y);
 
@@ -80,11 +82,13 @@ class CampaignView extends Backbone.View
 
     if percentA == 100
       barB.hide()
-    if percentB == 100
+    else if percentB == 100
       barA.hide()
-    else
+    else 
       barA.show()
       barB.show()
+    pos = Math.round(percentA*9.8)
+    $(@el).find("#split-test-slider").css("-webkit-transform", 'translateX(' + pos + 'px)');
 
     $(@el).find("#split-test-bar-a").css("width", percentA + "%")
     $(@el).find("#split-test-bar-b").css("width", percentB + "%")
@@ -108,8 +112,9 @@ class CampaignView extends Backbone.View
       @updateSplitValue()
 
 
-  updateSplitValue: =>
-    @model.set split: $(@el).find("#split-test-input").val()
+  updateSplitValue: (value) =>
+    @model.set split: value
+    $(@el).find("#split-test-input").val(value)
 
   loadDataIntoModel: =>
     @model.set

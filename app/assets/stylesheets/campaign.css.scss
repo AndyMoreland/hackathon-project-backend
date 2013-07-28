@@ -23,6 +23,7 @@
       display: inline-block;
       float: left;
       min-width: 0;
+      -o-transition: width 0s;
 
     &#split-test-bar-a {
       border-top-left-radius: 10px;
