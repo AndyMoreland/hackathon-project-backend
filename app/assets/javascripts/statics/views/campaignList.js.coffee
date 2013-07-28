@@ -7,7 +7,7 @@ class CampaignListView extends Backbone.View
     @cc.fetch( {
       success: () =>
         cv = new CollectionView({
-          view: CampaignListView
+          view: CampaignListItemView
           collection: @cc
           el: $("#campaigns tbody")
         })
@@ -25,7 +25,7 @@ class CampaignListView extends Backbone.View
 
     @el
 
-  initialize: (options) =>
+  initialize: (options) ->
     @el = options.el
     @cc = new CampaignsCollection()
 

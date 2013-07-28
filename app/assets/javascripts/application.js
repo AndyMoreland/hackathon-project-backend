@@ -20,6 +20,7 @@
 //= require collection_view.js
 //= require statics/models/campaign.js
 //= require statics/collections/campaigns.js
+//= require statics/views/campaignListItem.js
 //= require statics/views/campaignList.js
 //= require statics/views/campaign.js
 //= require statics/views/index.js
