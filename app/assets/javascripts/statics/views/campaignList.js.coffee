@@ -9,7 +9,6 @@ class CampaignListView extends Backbone.View
 
   render: ->
     $(@el).html(@template())
-
     @el
 
 
