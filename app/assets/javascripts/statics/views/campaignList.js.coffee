@@ -3,7 +3,6 @@ class CampaignListView extends Backbone.View
 
   render: =>
     $(@el).html(@template())
-    console.log("before")
     @cc.fetch( {
       success: () =>
         cv = new CollectionView({
@@ -11,17 +10,9 @@ class CampaignListView extends Backbone.View
           collection: @cc
           el: $("#campaigns tbody")
         })
-
-        window.cv = cv;
-
-        console.log("j=a'ijkasdf")
         cv.render()
       }
     )
-
-    window.cc = @cc
-
-    console.log("after")
 
     @el
 
