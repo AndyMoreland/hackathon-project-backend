@@ -6,6 +6,7 @@ class Campaign < ActiveRecord::Base
   after_initialize :init
 
   def init
+    self.company_id ||= 1
     self.split  ||= 100
     self.app_id ||= 1
     self.test_a ||= "Control"

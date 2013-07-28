@@ -12,7 +12,7 @@ class CampaignView extends Backbone.View
   initialize: =>
     @model = @options.model
     @editors = {}
-
+    console.log @split
     @model.on "change:split", @renderSplitTestBar
 
   foo: ->
@@ -24,7 +24,7 @@ class CampaignView extends Backbone.View
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
     @renderSplitTestBar()
-
+    
     @el
 
   initCodeEditor: (editorID) =>
