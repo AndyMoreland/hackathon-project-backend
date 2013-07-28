@@ -19,6 +19,16 @@
       });
     }
 
+    function compare(a, b) {
+      if (a.date < b.date)
+        return -1;
+      if (a.date > b.date)
+        return 1;
+      return 0;
+    }
+
+    obj.sort(compare);
+
     return obj;
   }
 
@@ -125,8 +135,7 @@
                 .style("stroke", function(d) {
                   return color("A");
                 });
-            }
-            else if (series == "B") {
+            } else if (series == "B") {
               graph.append("svg:path")
                 .attr("d", line(formatData(values.values.B)))
                 .style("stroke", function(d) {
