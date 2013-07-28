@@ -9,7 +9,7 @@
 
   #split-test-slider {
     position: absolute;
-    left: 50%;
+    left:0;
     width: 20px;
     opacity: 0.5;
     height: 50px;
@@ -26,13 +26,13 @@
       min-width: 0;
 
     &#split-test-bar-a {
-      border-top-left-radius: 10px; 
-      border-bottom-left-radius: 10px; 
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
 
     &#split-test-bar-b {
-      border-top-right-radius: 10px; 
-      border-bottom-right-radius: 10px; 
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
 
