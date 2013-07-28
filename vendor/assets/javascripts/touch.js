@@ -1,4 +1,4 @@
-window.touch = function Touch(obj, params)
+window.Touch = function Touch(obj, params)
     {
         function move(e)
         {

@@ -15,6 +15,31 @@ class CampaignView extends Backbone.View
     console.log @split
     @model.on "change:split", @renderSplitTestBar
 
+  postRender: ->
+    @slider = $(@el).find("#split-test-slider")
+
+    Touch(@slider, {
+      onStart: (e) ->
+          console.log("starting")
+
+      onMove: (e) ->
+          x = e.x - e.xFromTopLeft
+          y = e.y - e.yFromTopLeft
+
+          console.log("Move to "+x+", "+y)
+          #moveBox(x, y);
+
+          e.preventDefault()
+          e.stopPropagation()
+
+      onEnd: (e) ->
+          console.log("end")
+
+      onClick: (e) ->
+          console.log("click");
+
+    });
+
   foo: ->
     alert("bar")
 
@@ -24,7 +49,7 @@ class CampaignView extends Backbone.View
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
     @renderSplitTestBar()
-    
+
     @el
 
   initCodeEditor: (editorID) =>
