@@ -7,7 +7,9 @@
 </td>
 <td class="locked">
   {{#if locked}}
-    <span class="label label-yellow"><i class="icon-lock"></i> Locked</span>
+    <span id="lock-btn" class="label label-yellow lock-btn"><i class="icon-lock"></i> Locked</span>
+  {{else}}
+    <span id="unlock-btn" class="label label-lightblue lock-btn"><i class="icon-unlock"></i> Unocked</span>
   {{/if}}
 </td>
 <td class="name"><h2>{{name}}</h2></td>
