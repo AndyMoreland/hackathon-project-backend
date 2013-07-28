@@ -4,6 +4,7 @@ class CampaignView extends Backbone.View
 
   events:
     "blur #split-test-input" : "updateSplitValue"
+    "keydown #split-test-input": "downUpdateSplitValue"
     "keyup #split-test-input": "maybeUpdateSplitValue"
     "click button[name=save]" : "save"
 
@@ -51,18 +52,26 @@ class CampaignView extends Backbone.View
     $(@el).find("#split-test-bar-a").css("width", percentA + "%")
     $(@el).find("#split-test-bar-b").css("width", percentB + "%")
 
-  maybeUpdateSplitValue: (event) ->
+  downUpdateSplitValue: (event) ->
     if event.which == 13
       @updateSplitValue()
       return
 
+    k = event.which
+    if !((k >= 48 && k <= 57) || # numbers
+        (k >= 96 && k <= 105) || # numpad
+        (k == 37 || k == 39) || # right and left
+        (k == 8 || k == 46)) # backspace and delete
+      event.preventDefault()
+
+
+  maybeUpdateSplitValue: (event) ->
     value = parseInt(event.target.value)
     if value >= 0 and value <= 100
       @updateSplitValue()
 
 
   updateSplitValue: =>
-    console.log "yo, updating value"
     @model.set split: $(@el).find("#split-test-input").val()
 
   loadDataIntoModel: =>
