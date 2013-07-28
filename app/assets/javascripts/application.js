@@ -18,6 +18,8 @@
 //= require handlebars.js
 //= require touch.js
 //= require src/ace.js
+//= require md5.js
+//= require mixpanel_api
 //= require_tree ./templates/
 //= require collection_view.js
 //= require statics/models/campaign.js
