@@ -3,7 +3,7 @@ class CampaignListView extends Backbone.View
   className: "campaign-list-page"
 
   initialize: (options) ->
-    @cc = new CampaignsCollection()
+    @cc = options.collection
 
     # If the campaign collection changes, redner the list
     # @model.on "change", @render, this
@@ -11,16 +11,12 @@ class CampaignListView extends Backbone.View
 
   render: =>
     $(@el).html(@template())
-    @cc.fetch( {
-      success: () =>
-        cv = new CollectionView({
-          view: CampaignListItemView
-          collection: @cc
-          el: $("#campaigns tbody")
-        })
-        cv.render()
-      }
-    )
+    cv = new CollectionView
+      view: CampaignListItemView
+      collection: @cc
+      el: $("#campaigns tbody")
+
+    cv.render()
     @el
 
 

@@ -4,6 +4,10 @@ class CampaignView extends Backbone.View
 
   events:
     "all #split-test-input" : "updateSplitTestBar"
+    "click button[name=save]" : "save"
+
+  initialize: =>
+    @model = @options.model
 
   render: ->
     $(@el).html(@template())
@@ -16,7 +20,7 @@ class CampaignView extends Backbone.View
     editor.getSession().setMode("ace/mode/javascript");
 
 
-  viewRendered: =>    
+  viewRendered: =>
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
 
@@ -34,9 +38,14 @@ class CampaignView extends Backbone.View
       percentB = 97
     if percentB < 2
       percentB = 2
-      
+
     $("#split-test-bar-a").css("width", percentA + "%")
     $("#split-test-bar-b").css("width", percentB + "%")
+
+  save: (e) =>
+    window.a = this
+    console.log "Saving!"
+    @model.save()
 
 
 window.CampaignView = CampaignView
