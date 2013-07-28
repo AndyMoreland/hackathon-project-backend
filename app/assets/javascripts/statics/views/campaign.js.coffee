@@ -16,9 +16,8 @@ class CampaignView extends Backbone.View
 
   initCodeEditor: (editorID) =>
     editor = ace.edit(editorID);
-    editor.setTheme("ace/theme/monokai");
-    editor.getSession().setMode("ace/mode/javascript");
-
+    editor.setTheme("ace/theme/github");
+    editor.getSession().setMode("ace/mode/objectivec");
 
   viewRendered: =>
     @initCodeEditor("codeA")
