@@ -15,22 +15,14 @@
 
     &.progress-bar {
       height: $height - 4px;
-      border-radius: 3px;
+      border-radius: 0;
       width: 49%;
       display: inline-block;
+      float: left;
+      min-width: 0;
     }
 
   }
-
-  // .progress-bar-container.progress-bar-well.fat {
-  //    height: 50px;
-  //    border-radius: 5px
-  // }
-
-  // .progress-bar.progress-bar-well.fat {
-  //    height: 50px;
-  //    border-radius: 5px
-  // }
 
   .code-input {
     width: 100%;

@@ -3,7 +3,7 @@ class CampaignView extends Backbone.View
   className: "campaign-page"
 
   events:
-    "all #split-test-input" : "updateSplitTestBar"
+    "change #split-test-input" : "updateSplitTestBar"
     "click button[name=save]" : "save"
 
   initialize: =>
@@ -27,18 +27,19 @@ class CampaignView extends Backbone.View
 
   updateSplitTestBar: (e) =>
 
-    percentA = e.target.value
-    percentB = 98 - percentA;
+    percentA = parseInt(e.target.value)
+    percentB = 100 - percentA
 
-    if percentA > 97
-      percentA = 97
-    if percentA < 2
-      percentA = 2
+    barA = $("#split-test-bar-a")
+    barB = $("#split-test-bar-b")
 
-    if percentB > 97
-      percentB = 97
-    if percentB < 2
-      percentB = 2
+    if percentA == 100
+      barB.hide()
+    if percentB == 100
+      barA.hide()
+    else
+      barA.show()
+      barB.show()
 
     $("#split-test-bar-a").css("width", percentA + "%")
     $("#split-test-bar-b").css("width", percentB + "%")

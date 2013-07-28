@@ -13,5 +13,22 @@
     td:last-child {
       text-align: right;
     }
+
+    td.locked, td.status {
+      width: 100px;
+    }
+
+    .placeholder {
+      color: gray;
+    }
+
+    .btn-group {
+      vertical-align: middle;
+    }
+
+    #addRow {
+      border: 1px solid gray;
+    }
+
   }
 }
