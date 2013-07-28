@@ -35,7 +35,9 @@ class CampaignView extends Backbone.View
         if (pos > @right)
           pos = @right
         @slider.css("-webkit-transform", 'translateX(' + pos + 'px)');
-        @updateSplitValue(Math.round(100*pos/@right))
+
+        value = Math.round(100*pos/@right)
+        @updateSplitValue(value)
 
         e.preventDefault()
         e.stopPropagation()
@@ -87,6 +89,8 @@ class CampaignView extends Backbone.View
     pos = Math.round(percentA*9.8)
     $(@el).find("#split-test-slider").css("-webkit-transform", 'translateX(' + pos + 'px)');
 
+    @updateBarText(percentA)
+
     $(@el).find("#split-test-bar-a").css("width", percentA + "%")
     $(@el).find("#split-test-bar-b").css("width", percentB + "%")
 
@@ -111,7 +115,12 @@ class CampaignView extends Backbone.View
 
   updateSplitValue: (value) =>
     @model.set split: value
+    @updateBarText(value)
     # $(@el).find("#split-test-input").val(value)
+
+  updateBarText: (value) =>
+    $(@el).find("#progress-a-text").text(value + "%");
+    $(@el).find("#progress-b-text").text((100 - value) + "%");
 
   loadDataIntoModel: =>
     @model.set

@@ -30,11 +30,23 @@
     &#split-test-bar-a {
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
+
+      span {
+        color: white;
+      }
     }
 
     &#split-test-bar-b {
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
+    }
+
+    span {
+      line-height: 50px;
+      display: block;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
     }
   }
 
