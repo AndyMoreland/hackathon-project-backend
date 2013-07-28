@@ -3,7 +3,7 @@ class CampaignListView extends Backbone.View
   className: "campaign-list-page"
 
   initialize: (options) ->
-    @cc = new CampaignsCollection()
+    @cc = options.collection
 
     # If the campaign collection changes, redner the list
     # @model.on "change", @render, this
