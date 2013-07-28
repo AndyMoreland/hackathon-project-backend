@@ -1,5 +1,6 @@
 class IndexView extends Backbone.View
   template: HandlebarsTemplates['index']
+  className: "indexView"
 
   initialize: ->
         console.log "index!"
