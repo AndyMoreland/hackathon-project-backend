@@ -19,7 +19,6 @@ class CampaignView extends Backbone.View
     @initCodeEditor("codeA")
     @initCodeEditor("codeB")
     @renderSplitTestBar()
-    @delegateEvents()
 
     @el
 
