@@ -16,10 +16,10 @@ class CollectionView extends Backbone.View
   addItem: (model) =>
     view = new @rowView(model: model)
     $(@el).append(view.render())
-    @views[model] = view
+    @views[model.id] = view
 
   removeItem: (model) =>
-    @views[model].remove()
+    @views[model.id].remove()
 
   render: =>
     console.info "Re-rendering", @
