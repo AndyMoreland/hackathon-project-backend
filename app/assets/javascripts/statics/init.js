@@ -17,8 +17,11 @@ Workspace = Backbone.Router.extend({
   },
 
   campaigns: function () {
+    console.log("a")
     view = new CampaignListView({el: $("#content")});
+    console.log("b")
     view.render();
+    console.log("c");
   },
 
   campaign: function (id) {
