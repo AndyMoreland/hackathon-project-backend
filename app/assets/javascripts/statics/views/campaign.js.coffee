@@ -3,7 +3,6 @@ class CampaignView extends Backbone.View
 
   initialize: (options) ->
     @el = options.el
-    console.log "campaign!"
 
   render: ->
     $(@el).html(@template())

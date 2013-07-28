@@ -8,7 +8,6 @@ Workspace = Backbone.Router.extend({
   initialize: function (options) {
     this.campaigns = new CampaignsCollection()
     this.campaigns.fetch();
-    console.log(this.campaigns);
   },
 
   index: function () {
@@ -17,11 +16,8 @@ Workspace = Backbone.Router.extend({
   },
 
   campaigns: function () {
-    console.log("a")
     view = new CampaignListView({el: $("#content")});
-    console.log("b")
     view.render();
-    console.log("c");
   },
 
   campaign: function (id) {
