@@ -6,7 +6,7 @@
 development:
   adapter: mysql2
   database: hackathon_backend_development
-  host: 172.16.240.40
+  host: 10.1.44.37 
   user: root
   pool: 5
   timeout: 5000
